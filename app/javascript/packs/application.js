@@ -1,3 +1,4 @@
-import 'bootstrap';
+// import 'bootstrap';
+import { activateSwitchMode } from '../components/color_mode';
 
-console.log('Hello World from Webpacker');
+activateSwitchMode();
