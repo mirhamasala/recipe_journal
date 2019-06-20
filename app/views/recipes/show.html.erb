@@ -14,7 +14,7 @@
       </div>
       <div class="recipe__directions">
         <h3>Method</h3>
-        <p><%= @recipe.method %></p>
+        <p><%= markdown(@recipe.method) %></p>
       </div>
       <%= link_to "Original recipe", @recipe.link, class: "recipe__link" %>
       <%= link_to "Edit", edit_recipe_path(@recipe), class: "recipe__edit" %>
