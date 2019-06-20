@@ -1,0 +1,45 @@
+.fifty-fifty {
+  display: flex;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.fifty-fifty .left, .fifty-fifty .right {
+  flex: 0 0 50%;
+}
+
+.fifty-fifty .right {
+  padding: 40px;
+  padding-left: 80px;
+}
+
+.fifty-fifty .left img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.fifty-fifty .right h1 {
+  font-weight: 800;
+}
+
+.fifty-fifty .form-group {
+  display: flex;
+  flex-direction: column;
+  margin: 15px 0;
+}
+
+.fifty-fifty .form-group input {
+  padding: 10px;
+  border: 1px solid rgba(1,1,1,0.1);
+}
+
+.fifty-fifty .form-group textarea {
+  padding: 10px;
+  border: 1px solid rgba(1,1,1,0.1);
+  min-height: 100px;
+}
+
+.fifty-fifty .form-group label {
+  font-weight: 600;
+}

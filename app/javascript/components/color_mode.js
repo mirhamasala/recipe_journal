@@ -11,11 +11,13 @@ const activateSwitchMode = () => {
       event.currentTarget.classList.add('dark');
       document.documentElement.style.setProperty('--text-color', 'var(--white)')
       document.body.style.backgroundImage = `url(${event.currentTarget.dataset.dark})`;
+      localStorage.setItem('activeColor', JSON.stringify('dark'));
     } else {
       event.currentTarget.classList.add('light');
       event.currentTarget.classList.remove('dark');
       document.documentElement.style.setProperty('--text-color', 'var(--black)')
       document.body.style.backgroundImage = `url(${event.currentTarget.dataset.light})`;
+      localStorage.setItem('activeColor', JSON.stringify('light'));
     }
   }
 
