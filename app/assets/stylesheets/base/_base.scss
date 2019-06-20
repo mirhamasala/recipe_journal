@@ -5,12 +5,13 @@ html {
 *,
 *::before,
 *::after {
-  margin: 0;
-  padding: 0;
+  // margin: 0;
+  // padding: 0;
   box-sizing: inherit;
 }
 
 body {
-  max-width: 100vw;
   background-image: asset-url("bg_light_side.jpg");
+  max-width: 100vw;
+  margin: 0;
 }
