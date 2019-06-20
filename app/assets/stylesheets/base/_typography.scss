@@ -1,5 +1,5 @@
 body {
-  color: var(--white);
+  color: var(--black);
   font-family: var(--font-prim);
   font-size: 16px;
   font-weight: 400;
@@ -11,5 +11,6 @@ h1, h2, h3 {
 }
 
 a {
+  color: var(--prim-400);
   text-decoration: none;
 }
