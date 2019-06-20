@@ -1,0 +1,8 @@
+<h1>All Recipes</h1>
+<%= link_to "Add new recipe", new_recipe_path %>
+<% @recipes.each do |recipe| %>
+  <img src="<%# recipe.photo_url %>">
+  <h2><%= link_to recipe.name, recipe_path(recipe) %></h2>
+  <p><%= recipe.category %></p>
+  <p>Cooking time: <%= recipe.time %></p>
+<% end %>
