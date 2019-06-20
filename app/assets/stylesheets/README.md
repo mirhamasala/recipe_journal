@@ -1,86 +1,39 @@
-## Setup
+## Sizing Reference
 
-Ensure you have bootstrap and it's dependencies
+### Type Scale
 
-```bash
-yarn add bootstrap
-yarn add jquery popper.js
-```
+12px = 0.75rem
+14px = 0.875rem
+16px = 1rem (base)
+18px = 1.125rem
+20px = 1.25rem
+24px = 1.5rem
+30px = 1.875rem
+32px = 2rem
+36px = 2.25rem
+48px = 3rem
+60px = 3.75rem
+72px = 4.5rem
 
-Ensure you have the following gems in your Rails `Gemfile`
+### Spacing & Sizing
 
-```ruby
-# Gemfile
-gem 'autoprefixer-rails'
-gem 'font-awesome-sass', '~> 5.6.1'
-gem 'simple_form'
-```
+4px (16 x 0.25)
+8px (16 x 0.5)
+12px (16 x 0.75)
+16px (16 x 1)
+24px (16 x 1.5)
+32px (16 x 2)
+48px (16 x 3)
+64px (16 x 4)
+96px (16 x 6)
+128px (16 x 8)
+192px (16 x 12)
+256px (16 x 16)
+384px (16 x 24)
+512px (16 x 32)
+640px (16 x 40)
+768px (16 x 48)
 
-In your terminal, generate SimpleForm Bootstrap config.
-
-```bash
-bundle install
-rails generate simple_form:install --bootstrap
-```
-
-Then replace Rails' stylesheets by Le Wagon's stylesheets:
-
-```
-rm -rf app/assets/stylesheets
-curl -L https://github.com/lewagon/stylesheets/archive/master.zip > stylesheets.zip
-unzip stylesheets.zip -d app/assets && rm stylesheets.zip && mv app/assets/rails-stylesheets-master app/assets/stylesheets
-```
-
-And the viewport in the layout
-
-```html
-<!-- app/views/layouts/application.html.erb -->
-<head>
-  <!-- Add these line for detecting device width -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-
-  <!-- [...] -->
-</head>
-```
-
-## Bootstrap JS
-
-Make sure you change the webpack config with the following code to include jQuery & Popper in webpack:
-
-```js
-// config/webpack/environment.js
-const { environment } = require('@rails/webpacker')
-
-// Bootstrap 4 has a dependency over jQuery & Popper.js:
-const webpack = require('webpack')
-environment.plugins.prepend('Provide',
-  new webpack.ProvidePlugin({
-    $: 'jquery',
-    jQuery: 'jquery',
-    Popper: ['popper.js', 'default']
-  })
-)
-
-module.exports = environment
-```
-
-Finally import bootstrap:
-
-```js
-// app/javascript/packs/application.js
-import 'bootstrap';
-```
-And add this to `application.html.erb`
-```erb
-<!-- app/views/layouts/application.html.erb -->
-
-  <!-- [...] -->
-
-  <%= javascript_include_tag "application" %> <!-- from app/assets/javascripts/application.js -->
-  <%= javascript_pack_tag "application" %>    <!-- from app/javascript/packs/application.js -->
-</body>
-```
 ## Adding new `.scss` files
 
 Look at your main `application.scss` file to see how SCSS files are imported. There should **not** be a `*= require_tree .` line in the file.
