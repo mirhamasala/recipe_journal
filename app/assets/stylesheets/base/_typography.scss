@@ -1,12 +1,15 @@
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Raleway:400,100,300,700,500");
+body {
+  color: var(--white);
+  font-family: var(--font-prim);
+  font-size: 16px;
+  font-weight: 400;
+}
 
-$body-font: "Open Sans", "Helvetica", "sans-serif";
-$headers-font: "Raleway", "Helvetica", "sans-serif";
+h1, h2, h3 {
+  font-family: var(--font-second);
+  font-weight: 400;
+}
 
-/**
- * Basic typography style for copy text
- */
-// body {
-//   color: $text-color;
-//   font: normal 125% / 1.4 $text-font-stack;
-// }
+a {
+  text-decoration: none;
+}
