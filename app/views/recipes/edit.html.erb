@@ -1,2 +1,12 @@
-<h1>Edit <%= @recipe.name %></h1>
-<%= render "form" %>
+
+<div class="wrapper">
+  <div class="container fifty-fifty">
+    <div class="left">
+      <%= image_tag @recipe.photo_url %>
+    </div>
+    <div class="right">
+      <h1>Edit <%= @recipe.name %></h1>
+      <%= render "form" %>
+    </div>
+  </div>
+</div>
