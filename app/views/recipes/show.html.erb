@@ -1,0 +1,7 @@
+<h1><%= @recipe.name %></h1>
+<img src="<%= @recipe.photo_url %>">
+<p>Serves: <%= @recipe.servings %></p>
+<p>Cooking time: <%= @recipe.time %></p>
+<p><%= @recipe.category %></p>
+<p>Method: <%= @recipe.method %></p>
+<%= link_to "Original Source", @recipe.link %>
