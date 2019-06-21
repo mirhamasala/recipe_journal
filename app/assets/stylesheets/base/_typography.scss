@@ -1,5 +1,9 @@
+:root {
+  --text-color: var(--black);
+}
+
 body {
-  color: var(--black);
+  color: var(--text-color);
   font-family: var(--font-prim);
   font-size: 16px;
   font-weight: 400;
