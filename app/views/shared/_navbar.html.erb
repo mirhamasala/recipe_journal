@@ -1,3 +1,6 @@
 <nav class="site-nav">
-  <a href="#" id="js-light-dark-mode" class="light-mode" data-light="<%= image_path 'bg_light_side.jpg' %>" data-dark="<%= image_path 'bg_dark_side.jpg' %>"><%= image_tag "darth_vader.svg", class: "darth-vader" %></a>
+  <%= link_to "Lozzy's Brunches", root_path, class: "site-nav__logo" %>
+  <a href="#" id="js-light-dark-mode" class="light-mode" data-light="<%= image_path 'bg_light_side.jpg' %>" data-dark="<%= image_path 'bg_dark_side.jpg' %>">
+    <%= image_tag "darth_vader.svg", id: "js-light-dark-icon", data: { yoda: image_path("yoda.svg"), vader: image_path("darth_vader.svg") }  %>
+  </a>
 </nav>

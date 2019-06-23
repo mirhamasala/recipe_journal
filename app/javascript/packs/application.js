@@ -1,4 +1,4 @@
 // import 'bootstrap';
-import { activateToggleLightDarkMode } from "../components/color_mode";
+import { activateSwitchLightDarkMode } from "../components/switch-light-dark";
 
-activateToggleLightDarkMode();
+activateSwitchLightDarkMode();
