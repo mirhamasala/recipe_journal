@@ -1,7 +1,6 @@
 <div class="container">
   <div class="recipe">
-    <img class="recipe__image" src="https://www.eat-this.org/wp-content/uploads/2017/08/Good-Life-Poke-Bowl-5-800x1200.jpg">
-    <!--<img class="recipe__image" src="<%= @recipe.photo_url %>">-->
+    <%= image_tag @recipe.photo_url, class: "recipe__image" %>
     <div class="recipe__content">
       <div class="recipe__header">
         <h1 class="recipe__name"><%= @recipe.name %></h1>
