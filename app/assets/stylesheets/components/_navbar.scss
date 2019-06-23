@@ -3,9 +3,11 @@
   justify-content: flex-end;
   align-items: center;
   padding: 12px 24px;
+  margin-bottom: 32px;
   border-bottom: 1px solid var(--prim-300);
   &__title {
     color: var(--prim-300);
+    font-family: var(--font-mono);
     font-size: 1.5rem;
     font-weight: 500;
     flex-grow: 1;
@@ -14,6 +16,18 @@
   &__forces {
     height: 32px;
     width: 32px;
-    margin-right: 18px;
+    margin-right: 12px;
+  }
+}
+
+// Media Queries
+@media screen and (max-width: 768px ) {
+  .site-nav__title {
+    font-size: 1.125rem;
+  }
+}
+@media screen and (min-width: 769px) and (max-width: 992px) {
+  .site-nav__title {
+    font-size: 1.25rem;
   }
 }
