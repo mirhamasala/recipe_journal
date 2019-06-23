@@ -1,0 +1,30 @@
+.recipe-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1 0 512px;
+  margin: 12px 6px;
+  &__photo {
+    height: 320px;
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+  }
+}
+
+// Media Queries
+@media screen and (max-width: 768px ) {
+  .recipe-card {
+    max-width: 100%;
+  }
+}
+@media screen and (min-width: 769px) and (max-width: 992px) {
+  .recipe-card {
+    max-width: calc(50% - 1rem);
+  }
+}
+@media screen and (min-width: 769px) and (min-width: 993px) {
+  .recipe-card {
+    max-width: calc(33.33% - 1rem);
+  }
+}
