@@ -1,0 +1,44 @@
+.recipe-form {
+  margin-bottom: 12px;
+  &__image {
+    height: 256px;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px;
+    label {
+      font-weight: 500;
+      padding-left: 4px;
+    }
+    input {
+      padding: 12px;
+      border: 1px solid rgba(1, 1, 1, 0.1);
+    }
+    textarea {
+      min-height: 192px;
+      padding: 12px;
+      border: 1px solid rgba(1, 1, 1, 0.1);
+    }
+  }
+}
+
+// Media Queries
+@media screen and (max-width: 480px) {
+  .recipe-form__name {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  .recipe-form__image {
+    height: 256px;
+  }
+}
+@media screen and (min-width: 769px) {
+  .recipe-form__image {
+    height: 384px;
+  }
+}
