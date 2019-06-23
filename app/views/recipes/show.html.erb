@@ -1,24 +1,26 @@
 <div class="recipe">
-  <div class="recipe__intro">
+  <div class="recipe__intro-wrap">
     <%= image_tag @recipe.photo_url, class: "recipe__image" %>
-    <div>
-    <div class="recipe__header">
-      <h1 class="recipe__name"><%= @recipe.name %></h1>
-      <%= link_to @recipe.link, class: "recipe__link" do %>
-        <i class="fas fa-thumbtack"></i>
-      <% end %>
-      <%= link_to edit_recipe_path(@recipe), class: "recipe__edit" do %>
-        <i class="fas fa-pen"></i>
-      <% end %>
-    </div>
-    <div class="recipe__details">
-      <span class="recipe__yield">Serves: <%= @recipe.servings %> // </span>
-      <span class="recipe__time">Cooking Time: <%= @recipe.time %> // </span>
-      <%= link_to @recipe.category.capitalize, "#", class: "recipe__category" %>
-    </div>
-    <div class="recipe__ingredients">
-      <h3>Ingredients</h3>
-    </div>
+    <div class="recipe__intro">
+      <div class="recipe__header">
+        <h1 class="recipe__name"><%= @recipe.name %></h1>
+        <%= link_to @recipe.link, class: "recipe__link" do %>
+          <i class="fas fa-thumbtack"></i>
+        <% end %>
+        <%= link_to edit_recipe_path(@recipe), class: "recipe__edit" do %>
+          <i class="fas fa-pen"></i>
+        <% end %>
+      </div>
+      <div class="recipe__details">
+        <span class="recipe__yield">Serves: <%= @recipe.servings %></span>
+        <span class="recipe__spacer">//</span>
+        <span class="recipe__time">Cooking Time: <%= @recipe.time %></span>
+        <span class="recipe__spacer">//</span>
+        <%= link_to @recipe.category.capitalize, "#", class: "recipe__category" %>
+      </div>
+      <div class="recipe__ingredients">
+        <h3>Ingredients</h3>
+      </div>
     </div>
   </div>
   <div class="recipe__directions">
