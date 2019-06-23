@@ -1,14 +1,13 @@
 .recipe-card {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  flex: 1 0 512px;
-  margin: 12px 6px;
-  &__photo {
+  max-width: calc(33.33% - 18px);
+  margin-bottom: 18px;
+  &__image {
     height: 320px;
+    width: 100%;
     object-fit: cover;
     object-position: center;
-    width: 100%;
   }
 }
 
@@ -20,11 +19,6 @@
 }
 @media screen and (min-width: 769px) and (max-width: 992px) {
   .recipe-card {
-    max-width: calc(50% - 1rem);
-  }
-}
-@media screen and (min-width: 769px) and (min-width: 993px) {
-  .recipe-card {
-    max-width: calc(33.33% - 1rem);
+    max-width: calc(50% - 8px);
   }
 }

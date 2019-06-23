@@ -1,22 +1,28 @@
-<div class="container">
-  <div class="recipe">
+<div class="recipe">
+  <div class="recipe__intro">
     <%= image_tag @recipe.photo_url, class: "recipe__image" %>
-    <div class="recipe__content">
-      <div class="recipe__header">
-        <h1 class="recipe__name"><%= @recipe.name %></h1>
-        <span class="recipe__yield">Serves: <%= @recipe.servings %> // </span>
-        <span class="recipe__time">Cooking Time: <%= @recipe.time %> // </span>
-        <%= link_to @recipe.category.capitalize, "#", class: "recipe__category" %>
-      </div>
-      <div class="recipe__ingredients">
-        <h3>Ingredients</h3>
-      </div>
-      <div class="recipe__directions">
-        <h3>Method</h3>
-        <p><%= markdown(@recipe.method) %></p>
-      </div>
-      <%= link_to "Original recipe", @recipe.link, class: "recipe__link" %>
-      <%= link_to "Edit", edit_recipe_path(@recipe), class: "recipe__edit" %>
+    <div>
+    <div class="recipe__header">
+      <h1 class="recipe__name"><%= @recipe.name %></h1>
+      <%= link_to @recipe.link, class: "recipe__link" do %>
+        <i class="fas fa-thumbtack"></i>
+      <% end %>
+      <%= link_to edit_recipe_path(@recipe), class: "recipe__edit" do %>
+        <i class="fas fa-pen"></i>
+      <% end %>
     </div>
+    <div class="recipe__details">
+      <span class="recipe__yield">Serves: <%= @recipe.servings %> // </span>
+      <span class="recipe__time">Cooking Time: <%= @recipe.time %> // </span>
+      <%= link_to @recipe.category.capitalize, "#", class: "recipe__category" %>
+    </div>
+    <div class="recipe__ingredients">
+      <h3>Ingredients</h3>
+    </div>
+    </div>
+  </div>
+  <div class="recipe__directions">
+    <h3>Method</h3>
+    <p><%= markdown(@recipe.method) %></p>
   </div>
 </div>

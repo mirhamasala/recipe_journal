@@ -18,6 +18,7 @@ ingredients.each do |ingredient|
 end
 
 puts "Preping the veggies.."
+7.times do
 Recipe.create!(
   name: "Vegane Poke Bowl",
   servings: 4,
@@ -34,3 +35,4 @@ Recipe.create!(
   photo_url: "https://www.eat-this.org/wp-content/uploads/2017/08/Good-Life-Poke-Bowl-5-800x1200.jpg",
   link: "https://www.eat-this.org/vegane-poke-bowl/"
 )
+end
