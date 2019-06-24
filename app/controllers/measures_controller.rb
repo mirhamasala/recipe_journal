@@ -1,8 +1,8 @@
 class MeasuresController < ApplicationController
-  def new
-    @recipe = Recipe.find(params[:recipe_id])
-    @measure = Measure.new
-  end
+  # def new
+  #   @recipe = Recipe.find(params[:recipe_id])
+  #   @measure = Measure.new
+  # end
 
   def create
     @recipe = Recipe.find(params[:recipe_id])
@@ -11,8 +11,8 @@ class MeasuresController < ApplicationController
     if @measure.save
       redirect_to recipe_path(@recipe)
     else
-      render :new
-      # render "recipes/show"
+      # render :new
+      render "recipes/show"
     end
   end
 
