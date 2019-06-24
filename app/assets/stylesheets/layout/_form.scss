@@ -6,6 +6,16 @@
     object-fit: cover;
     object-position: center;
   }
+  &__delete {
+    display: block;
+    color: var(--sup-danger);
+    font-size: 0.875rem;
+    text-align: right;
+    text-transform: uppercase;
+  }
+  &__done {
+    text-transform: uppercase;
+  }
   .form-group {
     display: flex;
     flex-direction: column;
