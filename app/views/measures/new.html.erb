@@ -1,0 +1,24 @@
+<h1>Edit ingredients for <%= link_to @recipe.name, recipe_path(@recipe) %></h1>
+<ul class="recipe__list spacer-xs">
+  <% @recipe.measures.each do |measure| %>
+    <li class="recipe__item">
+      <%= link_to measure_path(measure), method: :delete, data: { confirm: "Are you sure?" } do %>
+        <i class="fas fa-times icon-delete"></i>
+      <% end %>
+      <%= measure.amount %>
+      <%= measure.unit %>
+      <%= measure.ingredient.name %>
+    </li>
+  <% end %>
+</ul>
+<hr/>
+<h2>Add Ingredient</h2>
+<div class="recipe-form">
+  <%= simple_form_for [@recipe, @measure] do |f| %>
+    <%= f.input :amount %>
+    <%= f.input :unit %>
+    <%= f.association :ingredient %>
+    <%= f.submit "Add Ingredient", class: "button recipe-form__button spacer-xs" %>
+  <% end %>
+</div>
+<%= link_to "Done", recipe_path(@recipe), class: "recipe-form__done" %>
