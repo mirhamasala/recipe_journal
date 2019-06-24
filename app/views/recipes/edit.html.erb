@@ -1,5 +1,6 @@
 <div class="recipe-form">
   <%= image_tag @recipe.photo_url, class: "recipe-form__image" %>
-  <h1 class="recipe-form__name">Edit <%= @recipe.name %></h1>
+  <%= link_to "Delete Recipe", recipe_path(@recipe), class: "recipe-form__delete", method: :delete, data: { confirm: "Are you sure?" } %>
+  <h1 class="recipe-form__name">Edit <%= link_to @recipe.name, recipe_path(@recipe) %></h1>
   <%= render "form" %>
 </div>
