@@ -12,13 +12,14 @@ class RecipesController < ApplicationController
   def create
     @recipe = Recipe.create(recipe_params)
     if @recipe.save
-      redirect_to @recipe
+      redirect_to recipe_path(@recipe)
     else
       render "new"
     end
   end
 
   def show
+    @measure = Measure.new
   end
 
   def edit
@@ -26,7 +27,7 @@ class RecipesController < ApplicationController
 
   def update
     if @recipe.update(recipe_params)
-      redirect_to @recipe
+      redirect_to recipe_path(@recipe)
     else
       render "edit"
     end

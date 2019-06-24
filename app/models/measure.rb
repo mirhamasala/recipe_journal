@@ -1,5 +1,6 @@
 class Measure < ApplicationRecord
   belongs_to :recipe
   belongs_to :ingredient
-  validates :amount, :unit, :ingredient, :recipe, presence: true, uniqueness: { scope: :ingredient }
+  validates :amount, :unit, presence: true
+  validates :recipe, uniqueness: { scope: :ingredient }
 end

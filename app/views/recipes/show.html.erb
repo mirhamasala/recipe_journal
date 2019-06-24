@@ -20,6 +20,20 @@
       </div>
       <div class="recipe__ingredients">
         <h3>Ingredients</h3>
+        <%= link_to "Add new", new_recipe_measure_path(@recipe) %>
+        <ul class="recipe__list">
+          <% @recipe.measures.each do |measure| %>
+            <li class="recipe__item">
+              <%= measure.amount %>
+              <%= measure.unit %>
+              <%= measure.ingredient.name %>
+              <%= link_to measure_path(measure), method: :delete, data: { confirm: "Are you sure?" } do %>
+                <i class="fa fa-trash recipe__trash-icon"></i>
+              <% end %>
+            </li>
+          <% end %>
+        </ul>
+        <%# render "doses/new", cocktail: @cocktail, dose: @dose %>
       </div>
     </div>
   </div>
