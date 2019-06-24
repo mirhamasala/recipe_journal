@@ -14,14 +14,16 @@
       font-weight: 500;
       padding-left: 4px;
     }
-    input {
+    input, select {
       padding: 12px;
       border: 1px solid rgba(1, 1, 1, 0.1);
+      font-size: 1rem;
     }
     textarea {
       min-height: 192px;
       padding: 12px;
       border: 1px solid rgba(1, 1, 1, 0.1);
+      font-size: 1rem;
     }
   }
 }
