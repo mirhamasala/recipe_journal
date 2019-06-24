@@ -24,15 +24,16 @@
     font-size: 1em;
     margin-left: 12px;
   }
+  &__trash {
+    color: lightcoral;
+    margin-left: 12px;
+  }
   &__details {
     display: flex;
     margin-bottom: 32px;
   }
   &__spacer {
     margin: 0 8px;
-  }
-  &__trash-icon {
-    color: var(--black);
   }
 }
 

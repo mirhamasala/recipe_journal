@@ -10,6 +10,9 @@
         <%= link_to edit_recipe_path(@recipe), class: "recipe__edit" do %>
           <i class="fas fa-pen"></i>
         <% end %>
+        <%= link_to recipe_path(@recipe), method: :delete, data: { confirm: "Are you sure?" } do %>
+          <i class="fa fa-trash recipe__trash"></i>
+        <% end %>
       </div>
       <div class="recipe__details">
         <span class="recipe__yield">Serves: <%= @recipe.servings %></span>
@@ -27,7 +30,7 @@
               <%= measure.unit %>
               <%= measure.ingredient.name %>
               <%= link_to measure_path(measure), method: :delete, data: { confirm: "Are you sure?" } do %>
-                <i class="fa fa-trash recipe__trash-icon"></i>
+                <i class="fa fa-trash recipe__trash"></i>
               <% end %>
             </li>
           <% end %>
