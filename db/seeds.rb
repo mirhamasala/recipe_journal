@@ -12,15 +12,15 @@ Ingredient.destroy_all
 
 puts "Doing groceries.."
 ingredients = %w{ almonds banana asparagus avocado cauliflower coconut nori spinach walnuts }
-
 ingredients.each do |ingredient|
   Ingredient.create!(name: ingredient)
 end
 
 puts "Preping the veggies.."
-7.times do
+style = 0
+7.times do |style|
 Recipe.create!(
-  name: "Vegane Poke Bowl",
+  name: "Vegane Poke Bowl #{style += 1}",
   servings: 4,
   time: 30,
   category: "bowls",
@@ -36,3 +36,5 @@ Recipe.create!(
   link: "https://www.eat-this.org/vegane-poke-bowl/"
 )
 end
+
+puts "All done.."
