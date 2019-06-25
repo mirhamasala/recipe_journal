@@ -1,15 +1,14 @@
 class MeasuresController < ApplicationController
+  before_action :set_recipe, only: [:new, :create]
+
   def new
-    @recipe = Recipe.find(params[:recipe_id])
     @measure = Measure.new
   end
 
   def create
-    @recipe = Recipe.find(params[:recipe_id])
-    @measure = Measure.new(measure_params)
-    @measure.recipe = @recipe
+    @measure = @recipe.measures.create(measure_params)
     if @measure.save
-      redirect_to new_recipe_measure_path(@measure.recipe)
+      redirect_back(fallback_location: new_recipe_measure_path(@measure.recipe))
     else
       render :new
     end
@@ -18,10 +17,14 @@ class MeasuresController < ApplicationController
   def destroy
     @measure = Measure.find(params[:id])
     @measure.delete
-    redirect_to new_recipe_measure_path(@measure.recipe)
+    redirect_back(fallback_location: new_recipe_measure_path(@measure.recipe))
   end
 
   private
+  def set_recipe
+    @recipe = Recipe.find(params[:recipe_id])
+  end
+
   def measure_params
     params.require(:measure).permit(:amount, :unit, :ingredient_id)
   end
