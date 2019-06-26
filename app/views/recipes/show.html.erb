@@ -1,6 +1,7 @@
 <div class="recipe">
   <div class="recipe__intro-wrap">
-    <%= image_tag @recipe.photo_url, class: "recipe__image" %>
+    <%= cl_image_tag @recipe.photo, class: "recipe__image" %>
+    <%# image_tag @recipe.photo_url, class: "recipe__image" %>
     <div class="recipe__intro">
       <div class="recipe__header">
         <h1 class="recipe__name"><%= @recipe.name %></h1>

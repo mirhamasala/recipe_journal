@@ -4,6 +4,8 @@
   <%= f.input :time, label: "Time (in minutes)" %>
   <%= f.input :category %>
   <%= f.input :method %>
+  <%= f.input :photo %>
+  <%= f.input :photo_cache, as: :hidden %>
   <%= f.input :photo_url, label: "Photo URL" %>
   <%= f.input :link, label: "Link to original recipe" %>
   <%= f.submit class: "button recipe-form__button" %>

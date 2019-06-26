@@ -1,7 +1,12 @@
 <div class="cards-wrap">
   <% @recipes.each do |recipe| %>
     <div class="recipe-card">
-      <%= link_to image_tag(recipe.photo_url, class: "recipe-card__image"), recipe_path(recipe) %>
+      <% if recipe.photo %>
+        <% puts recipe.inspect %>
+        <%= cl_image_tag recipe.photo, class: "recipe__image" %>
+      <% else %>
+        <%= link_to image_tag(recipe.photo_url, class: "recipe-card__image"), recipe_path(recipe) %>
+      <% end %>
       <h2><%= link_to recipe.name, recipe_path(recipe) %></h2>
     </div>
   <% end %>
