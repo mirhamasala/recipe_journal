@@ -1,5 +1,9 @@
 <div class="recipe-form">
-  <%= image_tag @recipe.photo_url, class: "recipe-form__image" %>
+  <% if @recipe.photo? %>
+    <%= cl_image_tag @recipe.photo, class: "recipe-form__image cl-img" %>
+  <% else %>
+    <%= image_tag @recipe.link_to_photo, class: "recipe-form__image url-img" %>
+  <% end %>
   <%= link_to "Delete Recipe", recipe_path(@recipe), class: "recipe-form__delete", method: :delete, data: { confirm: "Are you sure?" } %>
   <h1 class="recipe-form__name">Edit <%= link_to @recipe.name, recipe_path(@recipe) %></h1>
   <%= render "form" %>

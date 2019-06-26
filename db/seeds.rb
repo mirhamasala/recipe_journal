@@ -32,7 +32,7 @@ Recipe.create!(
   Karotten mit dem Spiralschneider in Spiralen schneiden oder alternativ fein raspeln.
   Avocado in feine Scheiben schneiden. Erbsen 5 Minuten dämpfen, anschließend halbieren.
   Alles in einer Bowl anrichten und mit etwas Öl, Essig und Hawaiisalz abschmecken.",
-  photo_url: "https://www.eat-this.org/wp-content/uploads/2017/08/Good-Life-Poke-Bowl-5-800x1200.jpg",
+  link_to_photo: "https://www.eat-this.org/wp-content/uploads/2017/08/Good-Life-Poke-Bowl-5-800x1200.jpg",
   link: "https://www.eat-this.org/vegane-poke-bowl/"
 )
 end

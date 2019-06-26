@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_26_004157) do
+ActiveRecord::Schema.define(version: 2019_06_26_023659) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(version: 2019_06_26_004157) do
     t.integer "time"
     t.string "category"
     t.text "method"
-    t.string "photo_url"
+    t.string "link_to_photo"
     t.string "link"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
