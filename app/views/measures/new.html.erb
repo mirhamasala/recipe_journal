@@ -16,4 +16,10 @@
 <div class="recipe-form spacer-xs">
   <%= render "form" %>
 </div>
+<hr/>
+<div class="recipe-ingredient">
+  <p>Can't find the ingredient you're looking for? Add it here:</p>
+  <%= render "ingredients/new" %>
+</div>
+<hr/>
 <%= link_to "Done", recipe_path(@recipe), class: "recipe-form__done" %>

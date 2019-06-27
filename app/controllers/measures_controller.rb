@@ -2,6 +2,7 @@ class MeasuresController < ApplicationController
   before_action :set_recipe, only: [:new, :create]
 
   def new
+    @ingredient = Ingredient.new
     @measure = Measure.new
   end
 

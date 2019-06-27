@@ -5,4 +5,5 @@ Rails.application.routes.draw do
     resources :measures, only: [:new, :create]
   end
   resources :measures, only: [:destroy]
+  resources :ingredients, only: [:new, :create]
 end
