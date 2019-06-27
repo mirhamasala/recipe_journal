@@ -1,6 +1,6 @@
 <%= simple_form_for [@recipe, @measure] do |f| %>
   <%= f.input :amount %>
   <%= f.input :unit %>
-  <%= f.association :ingredient %>
+  <%= f.association :ingredient, input_html: { class: "select2" } %>
   <%= f.submit "Add", class: "button recipe-form__button" %>
 <% end %>

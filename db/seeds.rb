@@ -9,9 +9,8 @@ Ingredient.destroy_all
 puts "Doing groceries.."
 url = "https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list"
 ingredients = JSON.parse(open(url).read)
-ingredients["drinks"].each do |pair|
-  Ingredient.create!(name: pair["strIngredient1"])
-end
+sorted_ingredients = ingredients["drinks"].sort_by { |element| element["strIngredient1"] }
+sorted_ingredients.each { |ingredient| Ingredient.create!(name: ingredient["strIngredient1"].titleize) }
 
 puts "Prepping the veggies.."
 recipe_attributes = [
@@ -19,7 +18,7 @@ recipe_attributes = [
     name: "Vegane Poke Bowl",
     servings: "4 Bowls",
     time: 30,
-    category: "bowls",
+    category: "Bowls",
     method:"
     1. Backofen auf 200 °C Ober-/Unterhitze vorheizen.
 
