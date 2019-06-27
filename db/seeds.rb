@@ -9,8 +9,8 @@ Ingredient.destroy_all
 puts "Doing groceries.."
 url = "https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list"
 ingredients = JSON.parse(open(url).read)
-sorted_ingredients = ingredients["drinks"].sort_by { |element| element["strIngredient1"] }
-sorted_ingredients.each { |ingredient| Ingredient.create!(name: ingredient["strIngredient1"].titleize) }
+sorted_ingredients = ingredients["drinks"].sort_by { |element| element["strIngredient1"].capitalize }
+sorted_ingredients.each { |ingredient| Ingredient.create!(name: ingredient["strIngredient1"]) }
 
 puts "Prepping the veggies.."
 recipe_attributes = [
