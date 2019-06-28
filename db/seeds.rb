@@ -9,13 +9,13 @@ Ingredient.destroy_all
 puts "Creating nice users.."
 user_attributes = [
   {
-    email: "mirha.masala@me.com",
-    password: "iloveyou",
+    email: "mirha@testing.com",
+    password: "testing",
     admin: true
   },
   {
-    email: "serranog@gmail.com",
-    password: "iloveyou"
+    email: "g@testing.com",
+    password: "testing"
   },
 ]
 
