@@ -37,7 +37,8 @@ recipe_attributes = [
     8. Alles in einer Bowl anrichten und mit etwas Öl, Essig und Hawaiisalz abschmecken.",
     link_to_photo: "https://www.eat-this.org/wp-content/uploads/2017/08/Good-Life-Poke-Bowl-5-800x1200.jpg",
     link: "https://www.eat-this.org/vegane-poke-bowl/",
-    photo: "https://res.cloudinary.com/mirhamasala/image/upload/v1519107793/rhlgu1twsxe3jpo5srgt.jpg"
+    photo: "https://res.cloudinary.com/mirhamasala/image/upload/v1519107793/rhlgu1twsxe3jpo5srgt.jpg",
+    user_id: 1
   },
   {
     name: "Schnelles Kimchi",
@@ -54,7 +55,8 @@ recipe_attributes = [
 
     Unser schneller Notfall-Kimchi kann frisch gegessen werden (Logo, sonst wäre es ja kein Notfall-Kimchi), schmeckt aber noch besser, wenn du ihn einige Tage im Kühlschrank ziehen lässt.",
     link_to_photo: "https://www.eat-this.org/wp-content/uploads/2016/07/kimchi-feature_-960x651@2x.jpg",
-    link: "https://www.eat-this.org/schnelles-kimchi/"
+    link: "https://www.eat-this.org/schnelles-kimchi/",
+    user_id: 1
   },
   {
     name: "Goldene Milch",
@@ -78,7 +80,8 @@ recipe_attributes = [
     Die Paste hält sich in einem sauberen Schraubglas im Kühlschrank etwa 5 Tage, am besten lässt sie sich aber portionsweise in einer Eiswürfelform im Eisfach aufbewahren.
     ",
     link_to_photo: "https://www.eat-this.org/wp-content/uploads/2019/01/goldene-milch-3-1280x854@2x.jpg",
-    link: "https://www.eat-this.org/goldene-milch/"
+    link: "https://www.eat-this.org/goldene-milch/",
+    user_id: 1
   },
   {
     name: "Black Bean Burger",
@@ -115,7 +118,8 @@ recipe_attributes = [
 
     Die Patties sind auch grillbar! Also Kohlen anfeuern und ab auf den heißen Rost damit.",
     link_to_photo: "https://www.eat-this.org/wp-content/uploads/2017/07/Weltbester-Black-Bean-Burger-3-960x640@2x.jpg",
-    link: "https://www.eat-this.org/weltbester-black-bean-burger/"
+    link: "https://www.eat-this.org/weltbester-black-bean-burger/",
+    user_id: 1
   },
   {
     name: "Sabich",
@@ -143,6 +147,7 @@ recipe_attributes = [
       1. Pita-Brote kurz toasten, jeweils mit 1 EL Tahin bestreichen, mit Tomaten-Gurken-Salat, Auberginenscheiben und Kichererbsen füllen und mit Zhoug, Sojajoghurt und den eingelegten Zwiebeln toppen.",
     link_to_photo: "https://www.eat-this.org/wp-content/uploads/2019/04/sabich-israelisches-fruehstuecks-sandwich-12-800x1200@2x.jpg",
     link: "https://www.eat-this.org/sabich-israelisches-fruehstuecks-sandwich/",
+    user_id: 1
   }
 ]
 
