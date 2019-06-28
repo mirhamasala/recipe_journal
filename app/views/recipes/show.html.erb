@@ -11,8 +11,10 @@
         <%= link_to @recipe.link, class: "recipe__link" do %>
           <i class="fas fa-thumbtack"></i>
         <% end %>
-        <%= link_to edit_recipe_path(@recipe), class: "recipe__edit" do %>
-          <i class="fas fa-pen"></i>
+        <% if policy(Recipe).edit? %>
+          <%= link_to edit_recipe_path(@recipe), class: "recipe__edit" do %>
+            <i class="fas fa-pen"></i>
+          <% end %>
         <% end %>
       </div>
       <div class="recipe__details">
@@ -23,9 +25,11 @@
       <div class="recipe__ingredients">
         <div class="recipe__header">
           <h2>Ingredients</h2>
-          <%= link_to new_recipe_measure_path(@recipe), class: "recipe__edit" do %>
-            <i class="fas fa-pen"></i>
-          <% end %>
+          <%# if policy(Recipe).edit? %>
+            <%= link_to new_recipe_measure_path(@recipe), class: "recipe__edit" do %>
+              <i class="fas fa-pen"></i>
+            <% end %>
+          <% #end %>
         </div>
         <ul class="recipe__list">
           <% @recipe.measures.each do |measure| %>

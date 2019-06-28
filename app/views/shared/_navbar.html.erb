@@ -3,5 +3,7 @@
   <a href="#" id="js-light-dark-mode" class="light-mode" data-light="<%= image_path 'bg_light_side.jpg' %>" data-dark="<%= image_path 'bg_dark_side.jpg' %>">
     <%= image_tag "darth_vader.svg", id: "js-light-dark-icon", class: "site-nav__forces", data: { yoda: image_path("yoda.svg"), vader: image_path("darth_vader.svg") } %>
   </a>
-  <%= link_to "+recipe", new_recipe_path %>
+  <% if policy(Recipe).create? %>
+    <%= link_to "+recipe", new_recipe_path %>
+  <% end %>
 </nav>
