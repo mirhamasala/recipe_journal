@@ -11,7 +11,7 @@
         <%= link_to @recipe.link, class: "recipe__link" do %>
           <i class="fas fa-thumbtack"></i>
         <% end %>
-        <% if policy(Recipe).edit? %>
+        <% if policy(@recipe).edit? %>
           <%= link_to edit_recipe_path(@recipe), class: "recipe__edit" do %>
             <i class="fas fa-pen"></i>
           <% end %>
