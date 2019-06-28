@@ -4,10 +4,12 @@ class MeasuresController < ApplicationController
   def new
     @ingredient = Ingredient.new
     @measure = Measure.new
+    authorize @measure
   end
 
   def create
     @measure = @recipe.measures.create(measure_params)
+    authorize @measure
     if @measure.save
       redirect_back(fallback_location: new_recipe_measure_path(@measure.recipe))
     else
@@ -17,6 +19,7 @@ class MeasuresController < ApplicationController
 
   def destroy
     @measure = Measure.find(params[:id])
+    authorize @measure
     @measure.delete
     redirect_back(fallback_location: new_recipe_measure_path(@measure.recipe))
   end
