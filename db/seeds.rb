@@ -19,11 +19,36 @@ user_attributes = [
   },
 ]
 
+User.create!(user_attributes)
+
+# puts "Doing groceries.."
+# url = "https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list"
+# ingredients = JSON.parse(open(url).read)
+# sorted_ingredients = ingredients["drinks"].sort_by { |element| element["strIngredient1"].capitalize }
+# sorted_ingredients.each { |ingredient| Ingredient.create!(name: ingredient["strIngredient1"]) }
+
 puts "Doing groceries.."
-url = "https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list"
-ingredients = JSON.parse(open(url).read)
-sorted_ingredients = ingredients["drinks"].sort_by { |element| element["strIngredient1"].capitalize }
-sorted_ingredients.each { |ingredient| Ingredient.create!(name: ingredient["strIngredient1"]) }
+eat_this_ingredients = %w(Wassermelone
+Erdnussöl
+Salz
+Apfelessig
+Nori
+Sushireis
+Karotten
+Avocado
+Erbsen
+Chinakohl
+Salat
+Minigurken
+Gurkenscheiben
+Sesam
+Traubenkernöl
+Hawaii-Salz
+)
+
+eat_this_ingredients.each do |ingredient|
+  Ingredient.create!(name: ingredient)
+end
 
 puts "Prepping the veggies.."
 recipe_attributes = [
@@ -164,6 +189,100 @@ recipe_attributes = [
   }
 ]
 
-User.create!(user_attributes)
 Recipe.create!(recipe_attributes)
+
+puts "Add measures.."
+measures_vegane_poke_bowl = [
+  {
+    amount: 500,
+    unit: "g",
+    ingredient: Ingredient.find_by_name("wassermelone"),
+    recipe: Recipe.find(1)
+  },
+  {
+    amount: 4,
+    unit: "el",
+    ingredient: Ingredient.find_by_name("erdnussöl"),
+    recipe: Recipe.find(1)
+  },
+  {
+    amount: 1.5,
+    unit: "tl",
+    ingredient: Ingredient.find_by_name("salz"),
+    recipe: Recipe.find(1)
+  },
+  {
+    amount: 0.5,
+    unit: "blatt",
+    ingredient: Ingredient.find_by_name("nori"),
+    recipe: Recipe.find(1)
+  },
+  {
+    amount: 150,
+    unit: "g",
+    ingredient: Ingredient.find_by_name("sushireis"),
+    recipe: Recipe.find(1)
+  },
+  {
+    amount: 2,
+    ingredient: Ingredient.find_by_name("karotten"),
+    recipe: Recipe.find(1)
+  },
+  {
+    amount: 2,
+    ingredient: Ingredient.find_by_name("avocado"),
+    recipe: Recipe.find(1)
+  },
+  {
+    amount: 1,
+    unit: "handvoll",
+    ingredient: Ingredient.find_by_name("erbsen"),
+    recipe: Recipe.find(1)
+  },
+  {
+    amount: 8,
+    unit: "blätter",
+    ingredient: Ingredient.find_by_name("chinakohl"),
+    recipe: Recipe.find(1)
+  },
+  {
+    amount: 8,
+    unit: "blätter",
+    ingredient: Ingredient.find_by_name("salat"),
+    recipe: Recipe.find(1)
+  },
+  {
+    amount: 1,
+    unit: "handvoll",
+    ingredient: Ingredient.find_by_name("minigurken"),
+    recipe: Recipe.find(1)
+  },
+  {
+    amount: 4,
+    unit: "tl",
+    ingredient: Ingredient.find_by_name("sesam"),
+    recipe: Recipe.find(1)
+  },
+  {
+    amount: 4,
+    unit: "el",
+    ingredient: Ingredient.find_by_name("traubenkernöl"),
+    recipe: Recipe.find(1)
+  },
+  {
+    amount: 4,
+    unit: "el",
+    ingredient: Ingredient.find_by_name("apfelessig"),
+    recipe: Recipe.find(1)
+  },
+  {
+    amount: 0.25,
+    unit: "tl",
+    ingredient: Ingredient.find_by_name("hawaii-salz"),
+    recipe: Recipe.find(1)
+  }
+]
+
+Measure.create!(measures_vegane_poke_bowl)
+
 puts "Let's cook!"
