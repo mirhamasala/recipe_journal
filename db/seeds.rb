@@ -6,6 +6,19 @@ Measure.destroy_all
 Recipe.destroy_all
 Ingredient.destroy_all
 
+puts "Creating nice users.."
+user_attributes = [
+  {
+    email: "mirha@testing.com",
+    password: "testing",
+    admin: true
+  },
+  {
+    email: "g@testing.com",
+    password: "testing"
+  },
+]
+
 puts "Doing groceries.."
 url = "https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list"
 ingredients = JSON.parse(open(url).read)
@@ -151,5 +164,6 @@ recipe_attributes = [
   }
 ]
 
+User.create!(user_attributes)
 Recipe.create!(recipe_attributes)
 puts "Let's cook!"
