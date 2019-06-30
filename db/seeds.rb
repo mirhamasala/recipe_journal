@@ -1,12 +1,14 @@
 require 'open-uri'
 
 # Ingredient.destroy_all if Rails.env.development?
-puts "Cleaning the fridge.."
+puts "Cleaning the fridge, burning the books.."
 Measure.destroy_all
 Recipe.destroy_all
 Ingredient.destroy_all
+puts "The coast is clear.."
 
-puts "Creating nice users.."
+# Adding users
+puts "Kidnapping chefs.."
 user_attributes = [
   {
     email: "mirha@testing.com",
@@ -18,8 +20,8 @@ user_attributes = [
     password: "testing"
   },
 ]
-
 User.create!(user_attributes)
+puts "Chefs ready to get chopping.."
 
 # puts "Doing groceries.."
 # url = "https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list"
@@ -27,29 +29,83 @@ User.create!(user_attributes)
 # sorted_ingredients = ingredients["drinks"].sort_by { |element| element["strIngredient1"].capitalize }
 # sorted_ingredients.each { |ingredient| Ingredient.create!(name: ingredient["strIngredient1"]) }
 
+# Creating ingredients
 puts "Doing groceries.."
-eat_this_ingredients = %w(Wassermelone
-Erdnussöl
-Salz
-Apfelessig
-Nori
-Sushireis
-Karotten
-Avocado
-Erbsen
-Chinakohl
-Salat
-Minigurken
-Gurkenscheiben
-Sesam
-Traubenkernöl
-Hawaii-Salz
+eat_this_ingredients = %w(
+  Wassermelone
+  Erdnussöl
+  Salz
+  Apfelessig
+  Nori
+  Sushireis
+  Karotten
+  Avocado
+  Erbsen
+  Chinakohl
+  grüner\ Salat
+  Minigurken
+  Gurkenscheiben
+  Sesam
+  Traubenkernöl
+  Hawaii-Salz
+  Karotte
+  Frühlingszwiebel
+  Knoblauchzehen
+  koreanische\ Chiliflocken
+  Sojasauce
+  brauner\ Zucker
+  Kurkumawurzel
+  Ingwer
+  Kardamomkapseln
+  Muskat
+  Zimt
+  schwarzer\ Pfeffer
+  Pflanzenmilch
+  Kurkuma-Paste
+  Ahornsirup
+  Leinsamen
+  schwarze\ Bohnen
+  Haferflocken
+  Misopaste
+  Thymian
+  Kreuzkümmel
+  Champignons
+  Olivenöl
+  rote\ Zwiebel
+  Walnüsse
+  vegane\ Mayonnaise
+  mittelscharfer\ Senf
+  Cashewkerne
+  rote\ Chili
+  Sojamilch
+  Burgerbrötchen
+  Tomaten
+  Salzgurken
+  Salatblätter
+  veganer\ Bacon
+  Aubergine
+  Olivenöl
+  Zwiebel
+  Gurke
+  Kichererbsen
+  Kala\ Namak
+  Petersilie
+  Koriander
+  grüne\ Chili
+  Kreuzkümmel
+  Koriandersamen
+  Zitrone
+  Pita-Brote
+  Tahin
+  Sojajoghurt
 )
 
 eat_this_ingredients.each do |ingredient|
   Ingredient.create!(name: ingredient)
 end
+puts "Groceries are bagged up.."
 
+# Creating recipes
 puts "Prepping the veggies.."
 recipe_attributes = [
   {
@@ -191,7 +247,9 @@ recipe_attributes = [
 
 Recipe.create!(recipe_attributes)
 
-puts "Add measures.."
+# Adding measures and ingredients to recipes
+# RECIPE 1
+puts "Measuring the goods for Vegane Poke Bowl.."
 measures_vegane_poke_bowl = [
   {
     amount: 500,
@@ -248,7 +306,7 @@ measures_vegane_poke_bowl = [
   {
     amount: 8,
     unit: "blätter",
-    ingredient: Ingredient.find_by_name("salat"),
+    ingredient: Ingredient.find_by_name("grüner salat"),
     recipe: Recipe.find(1)
   },
   {
@@ -284,5 +342,399 @@ measures_vegane_poke_bowl = [
 ]
 
 Measure.create!(measures_vegane_poke_bowl)
+puts "Vegane Poke Bowl is served.."
+
+# RECIPE 2
+puts "Measuring the goods for Schnelles Kimchi.."
+measures_schnelles_kimchi = [
+  {
+    amount: 300,
+    unit: "g",
+    ingredient: Ingredient.find_by_name("chinakohl"),
+    recipe: Recipe.find(2)
+  },
+  {
+    amount: 2,
+    unit: "el",
+    ingredient: Ingredient.find_by_name("salz"),
+    recipe: Recipe.find(2)
+  },
+  {
+    amount: 0.5,
+    ingredient: Ingredient.find_by_name("karotte"),
+    recipe: Recipe.find(2)
+  },
+  {
+    amount: 0.5,
+    ingredient: Ingredient.find_by_name("frühlingszwiebel"),
+    recipe: Recipe.find(2)
+  },
+  {
+    amount: 2,
+    unit: "",
+    ingredient: Ingredient.find_by_name("knoblauchzehen"),
+    recipe: Recipe.find(2)
+  },
+  {
+    amount: 3,
+    unit: "el",
+    ingredient: Ingredient.find_by_name("koreanische chiliflocken"),
+    recipe: Recipe.find(2)
+  },
+  {
+    amount: 2,
+    unit: "el",
+    ingredient: Ingredient.find_by_name("sojasauce"),
+    recipe: Recipe.find(2)
+  },
+  {
+    amount: 1,
+    unit: "tl",
+    ingredient: Ingredient.find_by_name("brauner zucker"),
+    recipe: Recipe.find(2)
+  }
+]
+
+Measure.create!(measures_schnelles_kimchi)
+puts "Schnelles Kimchi is served.."
+
+# RECIPE 3
+puts "Measuring the goods for Goldene Milch.."
+measures_goldene_milch = [
+  {
+    amount: 90,
+    unit: "g",
+    ingredient: Ingredient.find_by_name("kurkumawurzel"),
+    recipe: Recipe.find(3)
+  },
+  {
+    amount: 60,
+    unit: "g",
+    ingredient: Ingredient.find_by_name("ingwer"),
+    recipe: Recipe.find(3)
+  },
+  {
+    amount: 5,
+    ingredient: Ingredient.find_by_name("kardamomkapseln"),
+    recipe: Recipe.find(3)
+  },
+  {
+    amount: 1,
+    unit: "prise",
+    ingredient: Ingredient.find_by_name("muskat"),
+    recipe: Recipe.find(3)
+  },
+  {
+    amount: 3,
+    unit: "tl",
+    ingredient: Ingredient.find_by_name("zimt"),
+    recipe: Recipe.find(3)
+  },
+  {
+    amount: 0.75,
+    unit: "tl",
+    ingredient: Ingredient.find_by_name("schwarzer pfeffer"),
+    recipe: Recipe.find(3)
+  },
+  {
+    amount: 500,
+    unit: "ml",
+    ingredient: Ingredient.find_by_name("pflanzenmilch"),
+    recipe: Recipe.find(3)
+  },
+  {
+    amount: 2,
+    unit: "tl",
+    ingredient: Ingredient.find_by_name("kurkuma-paste"),
+    recipe: Recipe.find(3)
+  },
+  {
+    amount: 2,
+    unit: "tl",
+    ingredient: Ingredient.find_by_name("ahornsirup"),
+    recipe: Recipe.find(3)
+  }
+]
+
+Measure.create!(measures_goldene_milch)
+puts "Goldene Milch is served.."
+
+# RECIPE 4
+puts "Measuring the goods for Black Bean Burger.."
+measures_black_bean_burger = [
+  {
+    amount: 3,
+    unit: "el",
+    ingredient: Ingredient.find_by_name("leinsamen"),
+    recipe: Recipe.find(4)
+  },
+  {
+    amount: 250,
+    unit: "g",
+    ingredient: Ingredient.find_by_name("schwarze bohnen"),
+    recipe: Recipe.find(4)
+  },
+  {
+    amount: 70,
+    unit: "g",
+    ingredient: Ingredient.find_by_name("haferflocken"),
+    recipe: Recipe.find(4)
+  },
+  {
+    amount: 1,
+    unit: "tl",
+    ingredient: Ingredient.find_by_name("misopaste"),
+    recipe: Recipe.find(4)
+  },
+  {
+    amount: 1,
+    unit: "tl",
+    ingredient: Ingredient.find_by_name("thymian"),
+    recipe: Recipe.find(4)
+  },
+  {
+    amount: 1,
+    unit: "tl",
+    ingredient: Ingredient.find_by_name("kreuzkümmel"),
+    recipe: Recipe.find(4)
+  },
+  {
+    amount: 150,
+    unit: "g",
+    ingredient: Ingredient.find_by_name("champignons"),
+    recipe: Recipe.find(4)
+  },
+  # {
+  #   amount: 1,
+  #   unit: "el",
+  #   ingredient: Ingredient.find_by_name("olivenöl"),
+  #   recipe: Recipe.find(4)
+  # },
+  {
+    amount: 0.5,
+    unit: "tl",
+    ingredient: Ingredient.find_by_name("salz"),
+    recipe: Recipe.find(4)
+  },
+  {
+    amount: 1,
+    ingredient: Ingredient.find_by_name("rote zwiebel"),
+    recipe: Recipe.find(4)
+  },
+  {
+    amount: 40,
+    unit: "g",
+    ingredient: Ingredient.find_by_name("walnüsse"),
+    recipe: Recipe.find(4)
+  },
+  {
+    amount: 5,
+    unit: "el",
+    ingredient: Ingredient.find_by_name("olivenöl"),
+    recipe: Recipe.find(4)
+  },
+  {
+    amount: 2,
+    unit: "tl",
+    ingredient: Ingredient.find_by_name("vegane mayonnaise"),
+    recipe: Recipe.find(4)
+  },
+  {
+    amount: 1,
+    unit: "tl",
+    ingredient: Ingredient.find_by_name("mittelscharfer senf"),
+    recipe: Recipe.find(4)
+  },
+  {
+    amount: 15,
+    unit: "g",
+    ingredient: Ingredient.find_by_name("cashewkerne"),
+    recipe: Recipe.find(4)
+  },
+  {
+    amount: 0.5,
+    ingredient: Ingredient.find_by_name("rote chili"),
+    recipe: Recipe.find(4)
+  },
+  {
+    amount: 5,
+    unit: "el",
+    ingredient: Ingredient.find_by_name("sojamilch"),
+    recipe: Recipe.find(4)
+  },
+  {
+    amount: 4,
+    ingredient: Ingredient.find_by_name("burgerbrötchen"),
+    recipe: Recipe.find(4)
+  },
+  {
+    amount: 2,
+    ingredient: Ingredient.find_by_name("tomaten"),
+    recipe: Recipe.find(4)
+  },
+  {
+    amount: 2,
+    ingredient: Ingredient.find_by_name("salzgurken"),
+    recipe: Recipe.find(4)
+  },
+  # {
+  #   amount: 0.5,
+  #   ingredient: Ingredient.find_by_name("rote zwiebel"),
+  #   recipe: Recipe.find(4)
+  # },
+  {
+    amount: 4,
+    ingredient: Ingredient.find_by_name("salatblätter"),
+    recipe: Recipe.find(4)
+  },
+  {
+    amount: 6,
+    unit: "streifen",
+    ingredient: Ingredient.find_by_name("veganer bacon"),
+    recipe: Recipe.find(4)
+  }
+]
+
+Measure.create!(measures_black_bean_burger)
+# puts "Black Bean Burger is served.."
+
+# RECIPE 5
+puts "Measuring the goods for Sabich.."
+measures_sabich = [
+  {
+    amount: 300,
+    unit: "g",
+    ingredient: Ingredient.find_by_name("aubergine"),
+    recipe: Recipe.find(5)
+  },
+  {
+    amount: 2.75,
+    unit: "tl",
+    ingredient: Ingredient.find_by_name("salz"),
+    recipe: Recipe.find(5)
+  },
+  {
+    amount: 5,
+    unit: "el",
+    ingredient: Ingredient.find_by_name("olivenöl"),
+    recipe: Recipe.find(5)
+  },
+  {
+    amount: 1,
+    ingredient: Ingredient.find_by_name("rote zwiebel"),
+    recipe: Recipe.find(5)
+  },
+  {
+    amount: 3,
+    unit: "el",
+    ingredient: Ingredient.find_by_name("apfelessig"),
+    recipe: Recipe.find(5)
+  },
+  {
+    amount: 2,
+    ingredient: Ingredient.find_by_name("tomaten"),
+    recipe: Recipe.find(5)
+  },
+  {
+    amount: 0.5,
+    ingredient: Ingredient.find_by_name("gurke"),
+    recipe: Recipe.find(5)
+  },
+  {
+    amount: 1,
+    ingredient: Ingredient.find_by_name("frühlingszwiebel"),
+    recipe: Recipe.find(5)
+  },
+  # {
+  #   amount: 0.25,
+  #   unit: "tl",
+  #   ingredient: Ingredient.find_by_name("salz"),
+  #   recipe: Recipe.find(5)
+  # },
+  {
+    amount: 125,
+    unit: "g",
+    ingredient: Ingredient.find_by_name("kichererbsen"),
+    recipe: Recipe.find(5)
+  },
+  {
+    amount: 0.5,
+    unit: "tl",
+    ingredient: Ingredient.find_by_name("kala namak"),
+    recipe: Recipe.find(5)
+  },
+  {
+    amount: 0.5,
+    unit: "bund",
+    ingredient: Ingredient.find_by_name("petersilie"),
+    recipe: Recipe.find(5)
+  },
+  {
+    amount: 0.5,
+    unit: "bund",
+    ingredient: Ingredient.find_by_name("koriander"),
+    recipe: Recipe.find(5)
+  },
+  {
+    amount: 1,
+    ingredient: Ingredient.find_by_name("grüne chili"),
+    recipe: Recipe.find(5)
+  },
+  {
+    amount: 0.25,
+    unit: "tl",
+    ingredient: Ingredient.find_by_name("kreuzkümmel"),
+    recipe: Recipe.find(5)
+  },
+  {
+    amount: 0.5,
+    unit: "tl",
+    ingredient: Ingredient.find_by_name("koriandersamen"),
+    recipe: Recipe.find(5)
+  },
+  {
+    amount: 1,
+    unit: "tl",
+    ingredient: Ingredient.find_by_name("ahornsirup"),
+    recipe: Recipe.find(5)
+  },
+  # {
+  #   amount: 1,
+  #   unit: "tl",
+  #   ingredient: Ingredient.find_by_name("salz"),
+  #   recipe: Recipe.find(5)
+  # },
+  {
+    amount: 1,
+    ingredient: Ingredient.find_by_name("zitrone"),
+    recipe: Recipe.find(5)
+  },
+  # {
+  #   amount: 1,
+  #   unit: "el",
+  #   ingredient: Ingredient.find_by_name("olivenöl"),
+  #   recipe: Recipe.find(5)
+  # },
+  {
+    amount: 4,
+    ingredient: Ingredient.find_by_name("pita-brote"),
+    recipe: Recipe.find(5)
+  },
+  {
+    amount: 4,
+    unit: "el",
+    ingredient: Ingredient.find_by_name("tahin"),
+    recipe: Recipe.find(5)
+  },
+  {
+    amount: 4,
+    unit: "el",
+    ingredient: Ingredient.find_by_name("sojajoghurt"),
+    recipe: Recipe.find(5)
+  }
+]
+
+Measure.create!(measures_sabich)
+puts "Sabich is served.."
 
 puts "Let's cook!"
