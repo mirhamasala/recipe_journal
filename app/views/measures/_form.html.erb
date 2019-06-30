@@ -2,5 +2,5 @@
   <%= f.input :amount %>
   <%= f.input :unit %>
   <%= f.association :ingredient, input_html: { class: "select2" }, collection: Ingredient.order(:name) %>
-  <%= f.submit "Add Measure", class: "button recipe-form__button" %>
+  <%= f.submit "Add Measure", class: "button button--form" %>
 <% end %>
