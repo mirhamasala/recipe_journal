@@ -17,6 +17,7 @@ class RecipesController < ApplicationController
     authorize @recipe
 
     if @recipe.save
+      flash[:alert] = "Yay! You added a new recipe."
       redirect_to @recipe
     else
       render :new
