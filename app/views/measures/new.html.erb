@@ -1,5 +1,5 @@
 <h1>Edit measures for <%= link_to @recipe.name, recipe_path(@recipe) %></h1>
-<ul class="recipe__list spacer-xs">
+<ul class="recipe__list spacer-sm">
   <% @recipe.measures.each do |measure| %>
     <li class="recipe__item">
       <%= link_to measure_path(measure), method: :delete, data: { confirm: "Are you sure?" } do %>
@@ -12,14 +12,13 @@
   <% end %>
 </ul>
 <hr/>
+<%= link_to "Done", recipe_path(@recipe), class: "recipe-form__done" %>
 <h2>Add Measure</h2>
-<div class="recipe-form spacer-xs">
+<div class="recipe-form spacer-sm">
   <%= render "form" %>
 </div>
 <hr/>
-<div class="recipe-ingredient">
-  <p>Can't find the ingredient you're looking for? Add it here:</p>
+<div class="recipe-form spacer-sm">
+  <p class="recipe-form__add-ingredient">Can't find the ingredient you're looking for? Add it here:</p>
   <%= render "ingredients/new" %>
 </div>
-<hr/>
-<%= link_to "Done", recipe_path(@recipe), class: "recipe-form__done" %>

@@ -1,5 +1,4 @@
 .recipe-form {
-  margin-bottom: 12px;
   &__image {
     height: 256px;
     width: 100%;
@@ -14,7 +13,12 @@
     text-transform: uppercase;
   }
   &__done {
+    display: block;
+    text-align: right;
     text-transform: uppercase;
+  }
+  &__add-ingredient {
+    font-style: italic;
   }
   .form-group {
     display: flex;
@@ -36,6 +40,13 @@
       font-size: 1rem;
     }
   }
+}
+
+// Select 2 Overrides
+.select2-container--default .select2-selection--single {
+  background-color: #fff !important;
+  border: 1px solid rgba(1, 1, 1, 0.1) !important;
+  border-radius: 0 !important;
 }
 
 // Media Queries
