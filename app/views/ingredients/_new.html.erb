@@ -1,4 +1,7 @@
-<%= simple_form_for @ingredient do |f| %>
-  <%= f.input :name %>
+<%= form_with model: @ingredient do |f| %>
+  <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
   <%= f.submit "Add Ingredient", class: "button button--form" %>
 <% end %>
