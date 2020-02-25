@@ -1,14 +1,8 @@
 class MeasuresController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :show]
-  before_action :set_recipe, only: [:index, :new, :create, :edit]
-  before_action :set_ingredient, only: [:create]
-
-  def index
-    @measures = policy_scope(@recipe.measures)
-  end
+  before_action :set_recipe, only: [:new, :create]
 
   def new
-    # @measure = @recipe.measures.build => What's up with this?
+    @ingredient = Ingredient.new
     @measure = Measure.new
     authorize @measure
   end
@@ -16,9 +10,11 @@ class MeasuresController < ApplicationController
   def create
     @measure = @recipe.measures.build(measure_params)
     authorize @measure
-    if @measure.save!
-      redirect_back(fallback_location: new_recipe_measure_path(@measure.recipe))
+    if @measure.save
+      flash[:notice] = "Yay! You succesfully added #{@measure.ingredient.name}! ☀️"
+      redirect_to new_recipe_measure_path(@measure.recipe)
     else
+      flash.now[:alert] = "Oops! It looks like something went wrong. Please, try again. 🌈"
       render :new
     end
   end
@@ -34,11 +30,6 @@ class MeasuresController < ApplicationController
 
   def set_recipe
     @recipe = Recipe.find(params[:recipe_id])
-  end
-
-
-  def set_ingredient
-    @ingredient = Ingredient.find(params[:ingredient_id])
   end
 
   def measure_params

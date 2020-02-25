@@ -1,3 +1,6 @@
 <h1>Edit ingredients</h1>
 <%= render partial: "shared/measures", locals: { measures: @recipe.measures } %>
 <%= render "form" %>
+<hr>
+<p class="recipe-form__add-ingredient">Can't find the ingredient you're looking for? Add it here:</p>
+<%= render "ingredients/form" %>
