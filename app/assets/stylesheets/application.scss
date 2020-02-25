@@ -4,10 +4,8 @@
 @import "base/color";
 @import "base/fonts";
 @import "base/typography";
-// @import "base/bootstrap";
 
 // External libraries
-// @import "bootstrap/scss/bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
@@ -25,11 +23,11 @@
 
 // Layout
 @import "layout/form";
-@import "layout/login_form";
 // @import "layout/header";
 
 // Pages
 @import "pages/home";
+@import "pages/edit_recipe";
 @import "pages/recipe";
 
 // Themes

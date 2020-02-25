@@ -3,8 +3,10 @@
     <div class="recipe-card">
       <% if recipe.photo? %>
         <%= link_to cl_image_tag(recipe.photo, class: "recipe-card__image cl-img"), recipe_path(recipe) %>
-      <% else %>
+      <% elsif recipe.link_to_photo? %>
         <%= link_to image_tag(recipe.link_to_photo, class: "recipe-card__image url-img"), recipe_path(recipe) %>
+      <% else %>
+        <%= image_tag("avocado_smoothie.jpg", class: "recipe-card__image url-img") %>
       <% end %>
       <h2><%= link_to recipe.name, recipe_path(recipe) %></h2>
     </div>

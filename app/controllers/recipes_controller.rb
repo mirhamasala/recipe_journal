@@ -15,8 +15,7 @@ class RecipesController < ApplicationController
     @recipe = Recipe.new(recipe_params)
     @recipe.user = current_user
     authorize @recipe
-
-    if @recipe.save
+    if @recipe.save!
       redirect_to @recipe
     else
       render :new
@@ -24,7 +23,6 @@ class RecipesController < ApplicationController
   end
 
   def show
-    @measure = Measure.new
   end
 
   def edit
@@ -44,6 +42,7 @@ class RecipesController < ApplicationController
   end
 
   private
+
   def set_recipe
     @recipe = Recipe.find(params[:id])
     authorize @recipe

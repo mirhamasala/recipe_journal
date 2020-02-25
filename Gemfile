@@ -41,7 +41,6 @@ gem 'bootsnap', '>= 1.1.0', require: false
 # Frontend setup
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass', '~> 5.6.1'
-gem 'simple_form'
 
 # Markdown
 gem 'redcarpet'
