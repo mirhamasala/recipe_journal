@@ -1,6 +1,19 @@
-<%= simple_form_for [@recipe, @measure] do |f| %>
-  <%= f.input :amount %>
-  <%= f.input :unit %>
-  <%= f.association :ingredient, input_html: { class: "select2" }, collection: Ingredient.order(:name) %>
-  <%= f.submit "Add Measure", class: "button button--form" %>
+<%= form_with(model: [@recipe, @measure]) do |f| %>
+  <div class="field">
+    <%= f.label :amount %>
+    <%= f.number_field :amount, step: :any %>
+  </div>
+
+  <div class="field">
+    <%= f.label :unit %>
+    <%= f.text_field :unit %>
+  </div>
+
+  <div class="field">
+    <%= f.collection_select :ingredient_id, Ingredient.all.alphabetize, :id, :name %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Add Measure", class: "button button--form" %>
+  </div>
 <% end %>

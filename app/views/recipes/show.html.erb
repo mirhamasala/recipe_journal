@@ -2,8 +2,10 @@
   <div class="recipe__intro-wrap">
     <% if @recipe.photo? %>
       <%= cl_image_tag @recipe.photo, class: "recipe__image cl-img" %>
-    <% else %>
+    <% elsif @recipe.link_to_photo? %>
       <%= image_tag @recipe.link_to_photo, class: "recipe__image url-img" %>
+    <% else %>
+      <%= image_tag("avocado_smoothie.jpg", class: "recipe__image url-img") %>
     <% end %>
     <div class="recipe__intro">
       <div class="recipe__header">
@@ -28,22 +30,14 @@
         <div class="recipe__header">
           <h2>Ingredients</h2>
           <% if current_user %>
-            <% if policy(Measure).edit? %>
+            <% if policy(@recipe).edit? %>
               <%= link_to new_recipe_measure_path(@recipe), class: "recipe__edit" do %>
                 <i class="fas fa-pen"></i>
               <% end %>
-           <% end %>
+            <% end %>
           <% end %>
         </div>
-        <ul class="recipe__list">
-          <% @recipe.measures.each do |measure| %>
-            <li class="recipe__item">
-              <%= measure.amount == measure.amount.to_i ? measure.amount.to_i : measure.amount %>
-              <%= measure.unit %>
-              <%= measure.ingredient.name %>
-            </li>
-          <% end %>
-        </ul>
+        <%= render partial: "shared/measures", locals: { measures: @recipe.measures } %>
       </div>
     </div>
   </div>
