@@ -2,8 +2,10 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  padding: 12px 24px;
-  margin-bottom: 24px;
+  @include wrapper();
+  padding-top: $spacing-6;
+  padding-bottom: $spacing-6;
+  margin-bottom: $spacing-6;
   border-bottom: 1px solid var(--prim-300);
   &__title {
     color: var(--prim-300);

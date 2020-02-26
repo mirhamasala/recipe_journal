@@ -1,7 +1,7 @@
 .button {
   color: var(--white);
   background-color: var(--black);
-  padding: 12px;
+  padding: $spacing-3;
   border: 1px solid var(--black);
   font-size: 1rem;
   text-transform: uppercase;
