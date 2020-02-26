@@ -9,6 +9,11 @@
   padding-left: 4px;
 }
 
+.form__label--required:after {
+  color: var(--sup-danger);
+  content: "*"
+}
+
 .form__label--checkbox {
   padding-left: 0;
 }
