@@ -1,6 +1,10 @@
 .footer {
+  flex-shrink: 1;
   display: flex;
   justify-content: flex-end;
-  padding: 12px 24px;
+  padding-top: $spacing-3;
+  padding-right: $spacing-6;
+  padding-bottom: $spacing-3;
+  padding-left: $spacing-6;
   border-top: 1px solid var(--prim-300);
 }
