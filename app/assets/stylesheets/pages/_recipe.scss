@@ -41,7 +41,6 @@
   }
 }
 
-// Media Queries
 @media screen and (max-width: 480px) {
   .recipe__name {
     font-size: 1.5rem;
@@ -53,7 +52,8 @@
     display: none;
   }
 }
-@media screen and (max-width: 768px ) {
+
+@media screen and (max-width: 768px) {
   .recipe__intro-wrap {
     flex-direction: column;
   }
@@ -63,6 +63,7 @@
     margin-right: 0;
   }
 }
+
 @media screen and (min-width: 769px) and (max-width: 992px) {
   .recipe__image {
     height: 384px;
