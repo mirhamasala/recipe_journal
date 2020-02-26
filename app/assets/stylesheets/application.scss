@@ -1,39 +1,42 @@
-// Base
-@import "base/base";
-@import "base/helpers";
-@import "base/color";
-@import "base/fonts";
-@import "base/typography";
+// --------------------------------------------------------------
+// Config
+// --------------------------------------------------------------
 
-// External libraries
+@import "config/index";
+
+// --------------------------------------------------------------
+// External Libraries
+// --------------------------------------------------------------
+
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
-// Abstracts
-// @import "abstracts/mixins";
-// @import "abstracts/variables";
+// --------------------------------------------------------------
+// Base
+// --------------------------------------------------------------
 
+@import "base/base";
+
+// --------------------------------------------------------------
 // Components
-@import "components/alert";
-// @import "components/avatar";
-@import "components/button";
-@import "components/card";
-@import "components/footer";
-@import "components/navbar";
+// --------------------------------------------------------------
 
-// Layout
-@import "layout/form";
-// @import "layout/header";
+@import "components/index";
 
+// --------------------------------------------------------------
+// Layouts
+// --------------------------------------------------------------
+
+@import "layouts/index";
+
+// --------------------------------------------------------------
 // Pages
-@import "pages/home";
-@import "pages/edit_recipe";
-@import "pages/recipe";
+// --------------------------------------------------------------
 
-// Themes
-// @import "themes/dark_side";
-// @import "themes/light_side";
+@import "pages/index";
 
+// --------------------------------------------------------------
 // Vendors
-// @import "vendors/normalize";
+// --------------------------------------------------------------
+
 @import "vendors/select2";
