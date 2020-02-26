@@ -1,7 +1,9 @@
 .alert {
-  background-color: black;
-  padding: 24px;
-  margin-bottom: 12px;
-  margin-top: -32px;
+  background-color: var(--black);
+  padding-top: 12px;
+  padding-right: 24px;
+  padding-bottom: 12px;
+  padding-left: 24px;
+  margin-top: -25px; // To compensate for margin-bottom of navbar
   color: white;
 }
