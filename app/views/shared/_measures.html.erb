@@ -4,12 +4,12 @@
       <%= measure.amount == measure.amount.to_i ? measure.amount.to_i : measure.amount %>
       <%= measure.unit %>
       <%= measure.ingredient.name %>
-      <% if current_user %>
-        <% if policy(measure).destroy? %>
-          <%= link_to measure_path(measure), method: :delete, data: { confirm: "Are you sure?" } do %>
-            <i class="fas fa-times icon-delete"></i>
-          <% end %>
-        <% end %>
+      <%# if current_user %>
+        <%# if policy(measure).destroy? %>
+          <%#= link_to measure_path(measure), method: :delete, data: { confirm: "Are you sure?" } do %>
+            <%# <i class="fas fa-times icon-delete"></i> %>
+          <%# end %>
+        <%# end %>
       <% end %>
     </li>
   <% end %>
