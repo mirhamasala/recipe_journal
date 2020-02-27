@@ -1,0 +1,6 @@
+<% @recipes.each do |recipe| %>
+  <%= link_to recipe_path(recipe) do %>
+    <%= photo_for(recipe) %>
+    <h2><%= recipe.name %></h2>
+  <% end %>
+<% end %>
