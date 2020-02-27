@@ -1,5 +1,7 @@
 <div class="recipe-edit">
-  <%= photo_for(@recipe) %>
+  <div class="recipe-edit__image">
+    <%= photo_for(@recipe) %>
+  </div>
   <%= link_to "Delete Recipe", recipe_path(@recipe), class: "highlight highlight--danger", method: :delete, data: { confirm: "Are you sure?" } %>
   <h1>Edit <%= link_to @recipe.name, recipe_path(@recipe) %></h1>
   <%= render "form" %>

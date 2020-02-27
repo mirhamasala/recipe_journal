@@ -1,41 +1,9 @@
-.recipe-form {
-  &__image {
-    height: 256px;
-    width: 100%;
-    object-fit: cover;
-    object-position: center;
-  }
-  &__delete {
-    display: block;
-    color: var(--sup-danger);
-    font-size: 0.875rem;
-    text-align: right;
-    text-transform: uppercase;
-  }
-  &__done {
-    display: block;
-    text-align: right;
-    text-transform: uppercase;
-  }
-  &__add-ingredient {
-    font-style: italic;
-  }
+.recipe-edit__image {
+  height: 256px;
 }
 
-@media screen and (max-width: 480px) {
-  .recipe-form__name {
-    font-size: 1.5rem;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .recipe-form__image {
-    height: 256px;
-  }
-}
-
-@media screen and (min-width: 769px) {
-  .recipe-form__image {
+@media (min-width: 640px) {
+  .recipe-edit__image {
     height: 384px;
   }
 }
