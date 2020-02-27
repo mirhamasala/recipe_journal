@@ -1,47 +1,43 @@
 <div class="recipe">
-  <div class="recipe__intro-wrap">
-    <% if @recipe.photo? %>
-      <%= cl_image_tag @recipe.photo, class: "recipe__image cl-img" %>
-    <% elsif @recipe.link_to_photo? %>
-      <%= image_tag @recipe.link_to_photo, class: "recipe__image url-img" %>
-    <% else %>
-      <%= image_tag("avocado_smoothie.jpg", class: "recipe__image url-img") %>
-    <% end %>
+  <div class="recipe__image">
+    <%= photo_for(@recipe) %>
+  </div>
+  <div class="recipe__content">
     <div class="recipe__intro">
-      <div class="recipe__header">
-        <h1 class="recipe__name"><%= @recipe.name %></h1>
-        <%= link_to @recipe.link, class: "recipe__link" do %>
+      <div class="recipe__header-wrap">
+        <h1><%= @recipe.name %></h1>
+        <%= link_to @recipe.link, class: "recipe__icon" do %>
           <i class="fas fa-thumbtack"></i>
         <% end %>
         <% if current_user %>
           <% if policy(@recipe).edit? %>
-            <%= link_to edit_recipe_path(@recipe), class: "recipe__edit" do %>
+            <%= link_to edit_recipe_path(@recipe), class: "recipe__icon recipe__icon--pencil" do %>
               <i class="fas fa-pen"></i>
             <% end %>
           <% end %>
         <% end %>
       </div>
-      <div class="recipe__details">
-        <span class="recipe__yield">Serves: <%= @recipe.servings %></span>
-        <span class="recipe__spacer">//</span>
-        <span class="recipe__time">Cooking Time: <%= @recipe.time %> mins</span>
-      </div>
-      <div class="recipe__ingredients">
-        <div class="recipe__header">
-          <h2>Ingredients</h2>
-          <% if current_user %>
-            <% if policy(@recipe).edit? %>
-              <%= link_to new_recipe_measure_path(@recipe), class: "recipe__edit" do %>
-                <i class="fas fa-pen"></i>
-              <% end %>
+    </div>
+    <div class="recipe__details">
+      <span>Serves: <%= @recipe.servings %></span>
+      <span class="recipe__spacer">//</span>
+      <span>Cooking Time: <%= @recipe.time %> mins</span>
+    </div>
+    <div class="recipe__ingredients">
+      <div class="recipe__header-wrap">
+        <h2>Ingredients</h2>
+        <% if current_user %>
+          <% if policy(@recipe).edit? %>
+            <%= link_to new_recipe_measure_path(@recipe), class: "recipe__icon recipe__icon--pencil" do %>
+              <i class="fas fa-pen"></i>
             <% end %>
           <% end %>
-        </div>
-        <%= render partial: "shared/measures", locals: { measures: @recipe.measures } %>
+        <% end %>
       </div>
+      <%= render "shared/measures", measures: @recipe.measures %>
     </div>
   </div>
-  <div class="recipe__directions">
+  <div class="recipe__method">
     <h2>Method</h2>
     <p><%= markdown(@recipe.method) %></p>
   </div>

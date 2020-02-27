@@ -10,7 +10,21 @@ body {
   margin: 0 auto;
 }
 
+ul {
+  list-style: none;
+  margin-top: $spacing-0;
+  padding-left: $spacing-0;
+}
+
+img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
 .content {
+  @include spacer();
   @include wrapper();
   flex: 1 0 auto;
 }
