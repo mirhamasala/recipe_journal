@@ -1,9 +1,9 @@
-.alert {
+.flash {
   background-color: var(--black);
   padding-top: $spacing-3;
   padding-right: $spacing-6;
   padding-bottom: $spacing-3;
   padding-left: $spacing-6;
-  margin-top: -$spacing-6; // To compensate for margin-bottom of navbar
-  color: var(--white)
+  margin-top: -$spacing-1; // To compensate for border bottom of navbar
+  color: var(--white);
 }
