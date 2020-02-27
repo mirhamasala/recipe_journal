@@ -1,7 +1,0 @@
-<% if recipe.photo? %>
-  <%= cl_image_tag @recipe.photo, class: "recipe-form__image cl-img" %>
-<% elsif recipe.link_to_photo? %>
-  <%= image_tag recipe.link_to_photo, class: "recipe-form__image url-img" %>
-<% else %>
-  <%= image_tag("avocado_smoothie.jpg", class: "recipe-form__image url-img") %>
-<% end %>
